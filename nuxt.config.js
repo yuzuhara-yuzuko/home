@@ -10,6 +10,9 @@ export default {
   ** See https://nuxtjs.org/api/configuration-target
   */
   target: 'server',
+  generate: {
+    dir: 'home',
+  },
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
@@ -23,7 +26,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    base: {
+      href: 'router.base',
+    },
   },
   /*
   ** Global CSS
@@ -51,11 +57,14 @@ export default {
   */
   modules: [
   ],
+  router: {
+    base: '/home/'
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
-    publicPath: '/dist/_nuxt/',
+    // publicPath: '/_nuxt/',
   }
 }
